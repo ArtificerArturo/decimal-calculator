@@ -1,57 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Unit Circle Calculator</title>
-        <link rel="stylesheet" href="style.css" />
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    </head>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Decimal Calculator</title>
+      <link rel="stylesheet" href="style.css" />
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+   </head>
 
-    <body>
-        <script src="script.js" defer></script>
+   <body>
+      <script src="script.js" defer></script>
 
-        <div class="calculatorcontainer" id="decimalCalculator">
-            <div class="background">
-                <div><label for="input">Decimal Operations</label></div>
-                <div id="inputAndDropdown">
-                    <div>
-                        <input onkeyup="calculateDecimal()" id="dec1Input" placeholder="a" type="text" />
-                    </div>
-                    <div>
-                        <input onkeyup="calculateDecimal()" id="dec2Input" placeholder="b" type="text" />
-                    </div>
-                    <div>
-                        <select onchange="calculateDecimal()" id="dropdown">
-                            <option value="">Select</option>
-                            <option value="Add">Add</option>
-                            <option value="Subtract">Subtract</option>
-                            <option value="Multiply">Multiply</option>
-                            <option value="Divide">Divide</option>
-                            <option value="Exponent">Exponent</option>
-                            <option value="Root">Root</option>
-                            <option value="Logarithm">Logarithm</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="info"></div>
-                <div class="result"></div>
-                <div>
-                    <button class="calculate" onclick="calculateDecimal()" data-uw-rm-kbnav="click">
-                        Calculate
-                    </button>
-                </div>
+      <div class="calculatorcontainer" id="decimalCalculator">
+         <div class="background">
+            <div><label for="input">Decimal Operations</label></div>
+            <div id="inputAndDropdown">
+               <div>
+                  <input onkeyup="calculateDecimal()" id="dec1Input" placeholder="a" type="text" />
+               </div>
+               <div>
+                  <input onkeyup="calculateDecimal()" id="dec2Input" placeholder="b" type="text" />
+               </div>
+               <div>
+                  <select onchange="calculateDecimal()" id="dropdown">
+                     <option value="">Select</option>
+                     <option value="Add">Add</option>
+                     <option value="Subtract">Subtract</option>
+                     <option value="Multiply">Multiply</option>
+                     <option value="Divide">Divide</option>
+                     <option value="Exponent">Exponent</option>
+                     <option value="Root">Root</option>
+                     <option value="Logarithm">Logarithm</option>
+                  </select>
+               </div>
             </div>
-            <div id="bugLink" style="text-align: center; margin-bottom: 20px; font-size: 90%">
-                Found a bug?
-                <a
-                    class="ylist"
-                    href="https://airtable.com/appR7FfpamrmFpTmL/pagGUR4cIuGPtr6cm/form?prefill_Calculator=DecimalCalculator&amp;hide_Calculator=true"
-                    target="_blank"
-                    rel="noopener"
-                    >Let us know!</a
-                >
-            </div>
-        </div>
-    </body>
+            <div class="info"></div>
+            <div class="result"></div>
+         </div>
+         <div id="bugLink" style="text-align: center; margin-bottom: 20px; font-size: 90%">
+            Found a bug?
+            <a
+               class="ylist"
+               href="https://airtable.com/appR7FfpamrmFpTmL/pagGUR4cIuGPtr6cm/form?prefill_Calculator=DecimalCalculator&amp;hide_Calculator=true"
+               target="_blank"
+               rel="noopener"
+               >Let us know!</a
+            >
+         </div>
+      </div>
+   </body>
 </html>
