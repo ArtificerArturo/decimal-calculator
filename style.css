@@ -1,64 +1,64 @@
 #decimalCalculator .background {
-    background-color: #fafafa;
-    padding: 20px;
-    border: solid 1px #cbcbcb;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+   background-color: #fafafa;
+   padding: 20px;
+   border: solid 1px #cbcbcb;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
 }
 
 #decimalCalculator .calculate {
-    background-color: #fc0;
-    color: #333;
-    font-weight: 700;
-    border-radius: 8px;
-    border: 1px solid #cbcbcb;
-    padding: 10px 20px;
-    display: inline-block;
-    transition: 0.1s;
-    text-decoration: none;
+   background-color: #fc0;
+   color: #333;
+   font-weight: 700;
+   border-radius: 8px;
+   border: 1px solid #cbcbcb;
+   padding: 10px 20px;
+   display: inline-block;
+   transition: 0.1s;
+   text-decoration: none;
 }
 
 #decimalCalculator .calculate:hover {
-    background-color: #666;
-    color: #fff;
+   background-color: #666;
+   color: #fff;
 }
 
 #decimalCalculator {
-    max-width: 400px;
-    margin: 0 auto;
+   max-width: 400px;
+   margin: 0 auto;
 }
 
 #decimalCalculator #redirect {
-    display: inline-block;
+   display: inline-block;
 }
 
 #decimalCalculator .result {
-    font-weight: 700;
-    padding: 0px 15px;
-    white-space: pre-wrap;
+   font-weight: 700;
+   padding: 0px 15px;
+   white-space: pre-wrap;
 }
 
 #decimalCalculator #bugLink {
-    font-size: medium;
-    padding: 10px;
-    text-align: left;
+   font-size: medium;
+   padding: 10px;
+   text-align: left;
 }
 
 #decimalCalculator .background input {
-    display: inline-block;
-    padding: 10px;
-    background-color: white;
-    max-width: 100px;
+   display: inline-block;
+   padding: 10px;
+   background-color: white;
+   max-width: 100px;
 }
 
 #decimalCalculator #inputAndDropdown {
-    display: flex;
-    align-items: center;
-    gap: 2px;
+   display: flex;
+   align-items: center;
+   gap: 2px;
 }
 
 #decimalCalculator #dropdown {
-    height: 39px
+   height: 39px;
 }
