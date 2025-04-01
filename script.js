@@ -9,26 +9,32 @@ function calculateDecimal() {
    if (isNaN(decimal2)) decimal2 = 0
    let result = 0
 
-   if (dropdown.value == "") {
-      infoElement.innerHTML = ""
-      resultElement.innerHTML = ""
-   } else if (dropdown.value == "Add") {
+   if (dropdown.value == "Add") {
       infoElement.innerHTML = `<math><mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mo>?</mo></math>`
-      if (isNaN(decimal1)) return
+      if (isNaN(decimal1)) {
+         MathJax.typesetPromise()
+         return
+      }
       result = decimal1 + decimal2
       resultElement.innerHTML = `<math><mi>${numberWithCommas(decimal1)}</mi><mo>+</mo><mi>${numberWithCommas(
          decimal2
       )}</mi><mo>=</mo><mo>${resultConditioner(result)}</mo></math>`
    } else if (dropdown.value == "Subtract") {
       infoElement.innerHTML = `<math><mi>a</mi><mo>-</mo><mi>b</mi><mo>=</mo><mo>?</mo></math>`
-      if (isNaN(decimal1)) return
+      if (isNaN(decimal1)) {
+         MathJax.typesetPromise()
+         return
+      }
       result = decimal1 - decimal2
-      resultElement.innerHTML = `<math><mi>${numberWithCommas(decimal1)}</mi><mo>-</mo><mi>${numberWithCommas(
+      resultElement.innerHTML = `<math><mi>${numberWithCommas(decimal1)}</mi><mo>-</mo><mi> ${numberWithCommas(
          decimal2
       )}</mi><mo>=</mo><mo>${resultConditioner(result)}</mo></math>`
    } else if (dropdown.value == "Multiply") {
       infoElement.innerHTML = `<math><mi>a</mi><mo>&#xd7;</mo><mi>b</mi><mo>=</mo><mo>?</mo></math>`
-      if (isNaN(decimal1)) return
+      if (isNaN(decimal1)) {
+         MathJax.typesetPromise()
+         return
+      }
       result = decimal1 * decimal2
       resultElement.innerHTML = `<math><mi>${numberWithCommas(
          decimal1
@@ -37,7 +43,10 @@ function calculateDecimal() {
       )}</mo></math>`
    } else if (dropdown.value == "Divide") {
       infoElement.innerHTML = `<math><mi>a</mi><mo>&#xf7;</mo><mi>b</mi><mo>=</mo><mo>?</mo></math>`
-      if (isNaN(decimal1)) return
+      if (isNaN(decimal1)) {
+         MathJax.typesetPromise()
+         return
+      }
       if (decimal2 == 0) {
          result = "infinity"
       } else result = decimal1 / decimal2
@@ -48,14 +57,20 @@ function calculateDecimal() {
       )}</mo></math>`
    } else if (dropdown.value == "Exponent") {
       infoElement.innerHTML = `<math><msup><mi>a</mi><mi>b</mi></msup><mo>=</mo><mo>?</mo></math>`
-      if (isNaN(decimal1)) return
+      if (isNaN(decimal1)) {
+         MathJax.typesetPromise()
+         return
+      }
       result = Math.pow(decimal1, decimal2)
       resultElement.innerHTML = `<math><msup><mi>${numberWithCommas(decimal1)}</mi><mi>${numberWithCommas(
          decimal2
       )}</mi></msup><mo>=</mo><mo>${resultConditioner(result)}</mo></math>`
    } else if (dropdown.value == "Root") {
       infoElement.innerHTML = `<math><mroot><mi>a</mi><mi>b</mi></mroot><mo>=</mo><mo>?</mo></math>`
-      if (isNaN(decimal1)) return
+      if (isNaN(decimal1)) {
+         MathJax.typesetPromise()
+         return
+      }
       if (decimal1 < 0) {
          result = Math.pow(decimal1 * -1, 1 / decimal2) * -1
       } else {
@@ -66,7 +81,10 @@ function calculateDecimal() {
       )}</mi></mroot><mo>=</mo><mo>${resultConditioner(result)}</mo></math>`
    } else if (dropdown.value == "Logarithm") {
       infoElement.innerHTML = `<math><msub><mi>log</mi><mi>a</mi></msub><mfenced><mi>b</mi></mfenced><mo>=</mo><mo>?</mo></math>`
-      if (isNaN(decimal1)) return
+      if (isNaN(decimal1)) {
+         MathJax.typesetPromise()
+         return
+      }
       result = Math.log(decimal2) / Math.log(decimal1)
       resultElement.innerHTML = `<math><msub><mi>log</mi><mi>${numberWithCommas(
          decimal1
@@ -74,6 +92,7 @@ function calculateDecimal() {
          decimal2
       )}</mi></mfenced><mo>=</mo><mo>${resultConditioner(result)}</mo></math>`
    }
+   MathJax.typesetPromise() //style all new mathml because mathjax otherwise only runs on page load
 }
 
 function resultConditioner(result) {

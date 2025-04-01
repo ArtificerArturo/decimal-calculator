@@ -11,10 +11,12 @@
 #decimalCalculator {
    max-width: 400px;
    margin: 0 auto;
+   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   font-size: 18px;
 }
 
-#decimalCalculator #redirect {
-   display: inline-block;
+#percentageCalculator #intro {
+   color: #666
 }
 
 #decimalCalculator .result {
@@ -33,6 +35,7 @@
 #decimalCalculator input {
    padding: 10px;
    background-color: white;
+   border: solid 1px #cbcbcb;
    width: 100px;
 }
 
@@ -53,4 +56,23 @@
    gap: 4px;
    flex-wrap: wrap;
    row-gap: 10px;
+   font-size: 18px;
+}
+
+/* do not bring to wordpress below this line */
+#decimalCalculator a {
+   text-decoration: underline;
+   color: #000;
+   transition: color .1s ease-in-out, background-color .1s ease-in-out;
+   text-align: center;
+   font-size: 90%;
+}
+
+#decimalCalculator a:hover {
+   text-decoration-color: #fc0;
+   -webkit-text-fill-color: #000;
+   -webkit-text-stroke-width: .5px;
+   -webkit-text-stroke-color: #000;
+   transition-timing-function: ease;
+   transition-duration: 3s;
 }
