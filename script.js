@@ -16,9 +16,9 @@ function calculateDecimal() {
          return
       }
       result = decimal1 + decimal2
-      resultElement.innerHTML = `<math><mi>${numberWithCommas(decimal1)}</mi><mo>+</mo><mi>${numberWithCommas(
+      resultElement.innerHTML = `<math><mn>${numberWithCommas(decimal1)}</mn><mo>+</mo><mn>${numberWithCommas(
          decimal2
-      )}</mi><mo>=</mo><mo>${resultConditioner(result)}</mo></math>`
+      )}</mn><mo>=</mo><mn>${resultConditioner(result)}</mn></math>`
    } else if (dropdown.value == "Subtract") {
       infoElement.innerHTML = `<math><mi>a</mi><mo>-</mo><mi>b</mi><mo>=</mo><mo>?</mo></math>`
       if (isNaN(decimal1)) {
@@ -26,9 +26,11 @@ function calculateDecimal() {
          return
       }
       result = decimal1 - decimal2
-      resultElement.innerHTML = `<math><mi>${numberWithCommas(decimal1)}</mi><mo>-</mo><mi> ${numberWithCommas(
-         decimal2
-      )}</mi><mo>=</mo><mo>${resultConditioner(result)}</mo></math>`
+      resultElement.innerHTML = `<math><mn>${numberWithCommas(
+         decimal1
+      )}</mn><mo>-</mo><mn> ${numberWithCommas(decimal2)}</mn><mo>=</mo><mn>${resultConditioner(
+         result
+      )}</mn></math>`
    } else if (dropdown.value == "Multiply") {
       infoElement.innerHTML = `<math><mi>a</mi><mo>&#xd7;</mo><mi>b</mi><mo>=</mo><mo>?</mo></math>`
       if (isNaN(decimal1)) {
@@ -36,11 +38,11 @@ function calculateDecimal() {
          return
       }
       result = decimal1 * decimal2
-      resultElement.innerHTML = `<math><mi>${numberWithCommas(
+      resultElement.innerHTML = `<math><mn>${numberWithCommas(
          decimal1
-      )}</mi><mo>&#xd7;</mo><mi>${numberWithCommas(decimal2)}</mi><mo>=</mo><mo>${resultConditioner(
+      )}</mn><mo>&#xd7;</mo><mn>${numberWithCommas(decimal2)}</mn><mo>=</mo><mn>${resultConditioner(
          result
-      )}</mo></math>`
+      )}</mn></math>`
    } else if (dropdown.value == "Divide") {
       infoElement.innerHTML = `<math><mi>a</mi><mo>&#xf7;</mo><mi>b</mi><mo>=</mo><mo>?</mo></math>`
       if (isNaN(decimal1)) {
@@ -52,9 +54,9 @@ function calculateDecimal() {
       } else result = decimal1 / decimal2
       resultElement.innerHTML = `<math><mi>${numberWithCommas(
          decimal1
-      )}</mi><mo>&#xf7;</mo><mi>${numberWithCommas(decimal2)}</mi><mo>=</mo><mo>${resultConditioner(
+      )}</mi><mo>&#xf7;</mo><mn>${numberWithCommas(decimal2)}</mn><mo>=</mo><mn>${resultConditioner(
          result
-      )}</mo></math>`
+      )}</mn></math>`
    } else if (dropdown.value == "Exponent") {
       infoElement.innerHTML = `<math><msup><mi>a</mi><mi>b</mi></msup><mo>=</mo><mo>?</mo></math>`
       if (isNaN(decimal1)) {
@@ -62,9 +64,9 @@ function calculateDecimal() {
          return
       }
       result = Math.pow(decimal1, decimal2)
-      resultElement.innerHTML = `<math><msup><mi>${numberWithCommas(decimal1)}</mi><mi>${numberWithCommas(
+      resultElement.innerHTML = `<math><msup><mn>${numberWithCommas(decimal1)}</mn><mn>${numberWithCommas(
          decimal2
-      )}</mi></msup><mo>=</mo><mo>${resultConditioner(result)}</mo></math>`
+      )}</mn></msup><mo>=</mo><mn>${resultConditioner(result)}</mn></math>`
    } else if (dropdown.value == "Root") {
       infoElement.innerHTML = `<math><mroot><mi>a</mi><mi>b</mi></mroot><mo>=</mo><mo>?</mo></math>`
       if (isNaN(decimal1)) {
@@ -76,9 +78,9 @@ function calculateDecimal() {
       } else {
          result = Math.pow(decimal1, 1 / decimal2)
       }
-      resultElement.innerHTML = `<math><mroot><mi>${numberWithCommas(decimal1)}</mi><mi>${numberWithCommas(
+      resultElement.innerHTML = `<math><mroot><mn>${numberWithCommas(decimal1)}</mn><mn>${numberWithCommas(
          decimal2
-      )}</mi></mroot><mo>=</mo><mo>${resultConditioner(result)}</mo></math>`
+      )}</mn></mroot><mo>=</mo><mn>${resultConditioner(result)}</mn></math>`
    } else if (dropdown.value == "Logarithm") {
       infoElement.innerHTML = `<math><msub><mi>log</mi><mi>a</mi></msub><mfenced><mi>b</mi></mfenced><mo>=</mo><mo>?</mo></math>`
       if (isNaN(decimal1)) {
@@ -86,11 +88,11 @@ function calculateDecimal() {
          return
       }
       result = Math.log(decimal2) / Math.log(decimal1)
-      resultElement.innerHTML = `<math><msub><mi>log</mi><mi>${numberWithCommas(
+      resultElement.innerHTML = `<math><msub><mi>log</mi><mn>${numberWithCommas(
          decimal1
-      )}</mi></msub><mfenced><mi>${numberWithCommas(
+      )}</mn></msub><mfenced><mn>${numberWithCommas(
          decimal2
-      )}</mi></mfenced><mo>=</mo><mo>${resultConditioner(result)}</mo></math>`
+      )}</mn></mfenced><mo>=</mo><mn>${resultConditioner(result)}</mn></math>`
    }
    MathJax.typesetPromise() //style all new mathml because mathjax otherwise only runs on page load
 }
