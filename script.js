@@ -26,11 +26,9 @@ function calculateDecimal() {
          return
       }
       result = decimal1 - decimal2
-      resultElement.innerHTML = `<math><mn>${numberWithCommas(
-         decimal1
-      )}</mn><mo>-</mo><mn> ${numberWithCommas(decimal2)}</mn><mo>=</mo><mn>${resultConditioner(
-         result
-      )}</mn></math>`
+      resultElement.innerHTML = `<math><mn>${numberWithCommas(decimal1)}</mn><mo>-</mo><mn> ${numberWithCommas(
+         decimal2
+      )}</mn><mo>=</mo><mn>${resultConditioner(result)}</mn></math>`
    } else if (dropdown.value == "Multiply") {
       infoElement.innerHTML = `<math><mi>a</mi><mo>&#xd7;</mo><mi>b</mi><mo>=</mo><mo>?</mo></math>`
       if (isNaN(decimal1)) {
@@ -38,11 +36,9 @@ function calculateDecimal() {
          return
       }
       result = decimal1 * decimal2
-      resultElement.innerHTML = `<math><mn>${numberWithCommas(
-         decimal1
-      )}</mn><mo>&#xd7;</mo><mn>${numberWithCommas(decimal2)}</mn><mo>=</mo><mn>${resultConditioner(
-         result
-      )}</mn></math>`
+      resultElement.innerHTML = `<math><mn>${numberWithCommas(decimal1)}</mn><mo>&#xd7;</mo><mn>${numberWithCommas(
+         decimal2
+      )}</mn><mo>=</mo><mn>${resultConditioner(result)}</mn></math>`
    } else if (dropdown.value == "Divide") {
       infoElement.innerHTML = `<math><mi>a</mi><mo>&#xf7;</mo><mi>b</mi><mo>=</mo><mo>?</mo></math>`
       if (isNaN(decimal1)) {
@@ -52,11 +48,9 @@ function calculateDecimal() {
       if (decimal2 == 0) {
          result = "infinity"
       } else result = decimal1 / decimal2
-      resultElement.innerHTML = `<math><mi>${numberWithCommas(
-         decimal1
-      )}</mi><mo>&#xf7;</mo><mn>${numberWithCommas(decimal2)}</mn><mo>=</mo><mn>${resultConditioner(
-         result
-      )}</mn></math>`
+      resultElement.innerHTML = `<math><mi>${numberWithCommas(decimal1)}</mi><mo>&#xf7;</mo><mn>${numberWithCommas(
+         decimal2
+      )}</mn><mo>=</mo><mn>${resultConditioner(result)}</mn></math>`
    } else if (dropdown.value == "Exponent") {
       infoElement.innerHTML = `<math><msup><mi>a</mi><mi>b</mi></msup><mo>=</mo><mo>?</mo></math>`
       if (isNaN(decimal1)) {
@@ -90,9 +84,9 @@ function calculateDecimal() {
       result = Math.log(decimal2) / Math.log(decimal1)
       resultElement.innerHTML = `<math><msub><mi>log</mi><mn>${numberWithCommas(
          decimal1
-      )}</mn></msub><mfenced><mn>${numberWithCommas(
-         decimal2
-      )}</mn></mfenced><mo>=</mo><mn>${resultConditioner(result)}</mn></math>`
+      )}</mn></msub><mfenced><mn>${numberWithCommas(decimal2)}</mn></mfenced><mo>=</mo><mn>${resultConditioner(
+         result
+      )}</mn></math>`
    }
    MathJax.typesetPromise() //style all new mathml because mathjax otherwise only runs on page load
 }
@@ -112,3 +106,5 @@ function numberWithCommas(number) {
    //taken from SO. Worked better than .toLocaleString()
    return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
 }
+
+function testFunction() {}
