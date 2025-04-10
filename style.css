@@ -40,6 +40,10 @@
    width: 100px;
 }
 
+#decimalCalculator select {
+   background-color: white;
+}
+
 #decimalCalculator #inputAndDropdown {
    display: flex;
    align-items: center;

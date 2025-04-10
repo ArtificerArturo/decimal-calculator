@@ -55,7 +55,7 @@ function calculateDecimal() {
       infoElement.innerHTML = `<math><msup><mi>a</mi><mi>b</mi></msup><mo>=</mo><mo>?</mo></math>`
       if (isNaN(decimal1)) {
          MathJax.typesetPromise()
-         return //test
+         return
       }
       result = Math.pow(decimal1, decimal2)
       resultElement.innerHTML = `<math><msup><mn>${numberWithCommas(decimal1)}</mn><mn>${numberWithCommas(
@@ -106,5 +106,3 @@ function numberWithCommas(number) {
    //taken from SO. Worked better than .toLocaleString()
    return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
 }
-
-function testFunction() {}
